@@ -46,8 +46,13 @@
     components: {
       card
     },
+    watch: {
+      count: 'init'
+    },
     methods: {
       init () {
+        this.numbers = []
+        this.currentNumber = 1
         let count = this.count
         this.totalCount = count * count
         let style = 'grid-template-columns:'
@@ -64,6 +69,7 @@
         let color2 = this.color2
         let num = 0
         let index = 0
+        let items = []
         for (let i = 1; i <= totalCount; i++) {
           let color
           if (index % row === 0) {
@@ -77,14 +83,21 @@
           } else {
             color = color2
           }
+          // console.log(color)
+          // console.log('index  ' + index)
+          // console.log('row  ' + row)
+          // console.log(index % row)
+          // console.log('color1 ' + color1)
+          // console.log('color2 ' + color2)
           index++
           let number = this.getNumber(totalCount)
           let item = {
             number: number,
             background: color
           }
-          this.items.push(item)
+          items.push(item)
         }
+        this.items = items
       },
       getNumber (totalCount) {
         let number = Math.floor((Math.random() * totalCount) + 1)
@@ -107,6 +120,8 @@
             //   .then(action => {
             //     this.init()
             //   })
+            this.$emit('onComplete')
+            this.init()
           }
         }
       },

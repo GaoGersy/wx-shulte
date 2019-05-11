@@ -8,7 +8,8 @@
   export default {
     props: {
       number: String,
-      background: String
+      background: String,
+      count: Number
     },
     data () {
       return {
@@ -19,7 +20,8 @@
       }
     },
     watch: {
-      background: 'setStyle'
+      background: 'setStyle',
+      count: 'resetting'
     },
     mounted () {
       this.initEvent()
@@ -38,6 +40,10 @@
       },
       onClick () {
         this.$emit('onClick', this.number)
+      },
+      resetting () {
+        this.time = '0 s'
+        this.currentTime = 0
       }
     },
     beforeDestroy () {
@@ -49,9 +55,9 @@
 
 <style>
   .timer {
-    background: #49c4c7;
+    /*background: #49c4c7;*/
     text-align: center;
-    color: white;
+    color: #1a96c0;
     width: 100%;
     height: 30px;
     line-height: 30px;

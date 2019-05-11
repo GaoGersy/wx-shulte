@@ -9,7 +9,7 @@
     },
     "miniprogramRoot": "dist/wx/",
     "compileType": "miniprogram",
-    "appid": "wx52f77be8e2fcd5ea",
+    "appid": "wx3a5f8c347eae872c",
     "projectname": "schulte",
     "condition": {
         "search": {
