@@ -51,6 +51,7 @@
     },
     methods: {
       init () {
+        this.items = []
         this.numbers = []
         this.currentNumber = 1
         let count = this.count
@@ -83,12 +84,6 @@
           } else {
             color = color2
           }
-          // console.log(color)
-          // console.log('index  ' + index)
-          // console.log('row  ' + row)
-          // console.log(index % row)
-          // console.log('color1 ' + color1)
-          // console.log('color2 ' + color2)
           index++
           let number = this.getNumber(totalCount)
           let item = {
@@ -131,6 +126,7 @@
           let item = items[i]
           if (item.number === number) {
             item.number = ''
+            break
           }
         }
       }

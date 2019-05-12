@@ -19,12 +19,12 @@
     data () {
       return {
         trainCount: 0,
-        count: 10,
+        count: 3,
         needRemoveNumber: true,
         color1: '#90ff8e',
         color2: '#3abc51',
         buttons: [
-          3, 4, 5, 6, 7, 8, 9, 10
+          3, 4, 5, 6, 7, 8
         ]
       }
     },
